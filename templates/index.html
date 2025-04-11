@@ -16,8 +16,13 @@
 	<h1>Predict House Price</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-		<input type="text" name="no_of_rooms" placeholder="Number of Bedrooms" required="required" />
+    
+	 <!-- submits form to Flask route /predict -->
+	 <form action="{{ url_for('predict')}}"method="post">
+	<!-- input fields. required. accpet text though type ="number" is better -->
+        <!-- its just grabbing inputs by order they appear. which matches what model expects -->
+
+		 <input type="text" name="no_of_rooms" placeholder="Number of Bedrooms" required="required" />
         <input type="text" name="area" placeholder="Area (in square feet)" required="required" />
 		<input type="text" name="house_age" placeholder="House Age" required="required" />
 
