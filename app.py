@@ -20,6 +20,21 @@ def predict():
     For rendering results on HTML GUI
     '''
     #gets all input values from form; converts them to integers (the webpage takes values but in string, so converts them to integers) [2,2200,5]
+    '''
+    request.form
+    {
+     'bedroom': '2',
+     'area': '2200',
+     'house_age': '5'
+    }
+
+    request.form.values()
+    ['2','2200','5']
+
+    loop over each value from form submission, convert it to an int, and store the result in a list.
+
+    int_features = [2,2200,5]
+    '''
     int_features = [int(x) for x in request.form.values()]
     
     #wraps the array inside another list to make shape [[2,2200,5]]; because model expects this 2D array for one row of inputs. model.predict([[2,2200,5]])
